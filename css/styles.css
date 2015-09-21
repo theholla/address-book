@@ -29,6 +29,10 @@ h1 {
   display: none;
 }
 
+#show-second-address {
+  display: none;
+}
+
 .contact {
   cursor: pointer;
   color: #0088cc;
