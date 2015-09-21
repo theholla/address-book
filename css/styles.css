@@ -1,0 +1,39 @@
+#result {
+  display: none;
+}
+
+body {
+
+  background-color: #FFFFF0;
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+}
+
+html {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+}
+
+* {
+  font-family: Lydian BT;
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 1px 1px 2px gray;
+}
+
+#show-contact {
+  display: none;
+}
+
+.contact {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
