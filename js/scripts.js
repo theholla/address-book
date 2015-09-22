@@ -60,14 +60,12 @@ $(document).ready(function() {
       var inputtedStreet = $(this).find("input.new-street").val();
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
-      var newAddress = { street: inputtedStreet, city: inputtedCity, state: inputtedState };
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
 
       newContact.addresses.push(newAddress);
     });
 
-    /*Routing new contact information to web site*/
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName + "</span></li>");
-
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
     /* Show information for the contact that is clicked */
     $(".contact").last().click(function() {
