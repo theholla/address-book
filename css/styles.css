@@ -1,43 +1,38 @@
-#result {
-  display: none;
-}
-
 body {
-
-  background-color: #FFFFF0;
   margin: 0px;
   min-height: 100%;
-  width: 100%;
-}
+  width: 100%;}
 
 html {
   margin: 0px;
   min-height: 100%;
-  width: 100%;
-}
+  width: 100%;}
 
 * {
-  font-family: Lydian BT;
-}
+  font-family: Lydian BT;}
 
 h1 {
   font-size: 50px;
-  text-shadow: 1px 1px 2px gray;
-}
+  text-shadow: 1px 1px 2px gray;}
 
 #show-contact {
-  display: none;
-}
+  display: none;}
 
 #show-second-address {
-  display: none;
-}
+  display: none;}
 
 .contact {
   cursor: pointer;
-  color: #0088cc;
-}
+  color: #0088cc;}
 
 .contact:hover {
-  text-decoration: underline;
-}
+  text-decoration: underline;}
+
+ul {
+  list-style-type: none;}
+
+.gradient {
+  background: -webkit-linear-gradient(left top, #FFF4FF , #FFF9EA); /* Safari*/
+  background: -o-linear-gradient(bottom right, #FFF4FF, #FFF9EA); /* Opera*/
+  background: -moz-linear-gradient(bottom right, #FFF4FF, #FFF9EA); /* Firefox*/
+  background: linear-gradient(to bottom right, #FFF4FF , #FFF9EA);}

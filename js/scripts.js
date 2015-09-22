@@ -38,19 +38,8 @@ $(document).ready(function() {
   $("#add-address").click(function() {
       $(".new-address").append('<div class="new-address">' +
                                   '<div class="form-group">' +
-                                    '<p><strong>Address Type</strong></p>' +
-                                    '<div class="radio">' +
-                                      '<label>' +
-                                      '<input type="radio" name="home" id="new-addressType" value="new-home-address">' +
-                                      'Home' +
-                                      '</label>' +
-                                    '</div>' +
-                                    '<div class="radio">' +
-                                      '<label>' +
-                                      '<input type="radio" name="work" id="new-addressType" value="new-work-address">' +
-                                      'Work' +
-                                      '</label>' +
-                                    '</div>' +
+                                    '<label for="new-address-type">Home, Work, or Mailing?</label>' +
+                                    '<input type="text" class="form-control new-street" placeholder="home">' +
                                   '</div>' +
                                   '<div class="form-group">' +
                                   '<label for="new-street">Street</label>'+
@@ -77,11 +66,11 @@ $(document).ready(function() {
 
     /* Add a contact's address */
     $(".new-address").each(function() {
-      var inputtedAddressType = $(this).find("input.new-addressType").val();
+      var inputtedAddressType = $(this).find("input.new-address-type").val();
       var inputtedStreet = $(this).find("input.new-street").val();
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
-      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
+      var newAddress = new Address(inputtedAddressType, inputtedStreet, inputtedCity, inputtedState);
 
       newContact.addresses.push(newAddress);
     });
@@ -98,7 +87,7 @@ $(document).ready(function() {
       $("ul#addresses").text("");
 
       newContact.addresses.forEach(function(address) {
-        $("ul#addresses").append("<li>" + address.getAddressType() + ": " + address.fullAddress() + "</li>");
+        $("ul#addresses").append("<li>" + address.getAddressType() + " Address: " + address.fullAddress() + "</li>");
       });
     });
 

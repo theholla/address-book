@@ -7,7 +7,7 @@
     <script src="js/scripts.js"></script>
     <title>Address Book</title>
   </head>
-  <body>
+  <body class="gradient">
     <div class="container">
       <h1>Address Book</h1>
 
@@ -38,19 +38,8 @@
                   <!-- Address type -->
 
                   <div class="form-group">
-                    <p><strong>Address Type</strong></p>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="new-home-address" class="new-addressType">
-                        Home
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="new-work-address" class="new-addressType">
-                        Work
-                      </label>
-                    </div>
+                    <label for="new-address-type">Home, Work, or Mailing?</label>
+                    <input type="text" class="form-control new-address-type" placeholder="Home">
                   </div>
 
                   <!-- Street address -->
