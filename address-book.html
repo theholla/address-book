@@ -11,58 +11,59 @@
     <div class="container">
       <h1>Address Book</h1>
 
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row" id="form">
+          <div class="col-md-6 first-column">
             <h2>Add a contact:</h2>
 
             <!-- Form to add a new contact -->
+            <div class="initial-form">
+              <form id="new-contact">
+                <div class="form-group">
 
-            <form id="new-contact">
-              <div class="form-group">
+                  <!-- Contact's name -->
 
-                <!-- Contact's name -->
+                  <label for="new-first-name">First name</label>
+                  <input type="text" class="form-control" id="new-first-name">
+                </div>
+                <div class="form-group">
+                  <label for="new-last-name">Last name</label>
+                  <input type="text" class="form-control" id="new-last-name">
+                </div>
 
-                <label for="new-first-name">First name</label>
-                <input type="text" class="form-control" id="new-first-name">
-              </div>
-              <div class="form-group">
-                <label for="new-last-name">Last name</label>
-                <input type="text" class="form-control" id="new-last-name">
-              </div>
+                <!-- Contact's address -->
 
-              <!-- Contact's address -->
+                <div id="new-addresses">
+                  <div class="new-address">
 
-              <div id="new-addresses">
-                <div class="new-address">
+                    <!-- Address type -->
 
-                  <!-- Address type -->
+                    <div class="form-group">
+                      <label for="new-address-type">Home, Work, or Mailing?</label>
+                      <input type="text" class="form-control new-address-type" placeholder="Home">
+                    </div>
 
-                  <div class="form-group">
-                    <label for="new-address-type">Home, Work, or Mailing?</label>
-                    <input type="text" class="form-control new-address-type" placeholder="Home">
-                  </div>
+                    <!-- Street address -->
 
-                  <!-- Street address -->
-
-                  <div class="form-group">
-                    <label for="new-street">Street</label>
-                    <input type="text" class="form-control new-street">
-                  </div>
-                  <div class="form-group">
-                    <label for="new-city">City</label>
-                    <input type="text" class="form-control new-city">
-                  </div>
-                  <div class="form-group">
-                    <label for="new-state">State</label>
-                    <input type="text" class="form-control new-state">
+                    <div class="form-group">
+                      <label for="new-street">Street</label>
+                      <input type="text" class="form-control new-street">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-city">City</label>
+                      <input type="text" class="form-control new-city">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-state">State</label>
+                      <input type="text" class="form-control new-state">
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Add another address or submit form -->
-              <span class="btn btn-default" id="add-address">Another address</span>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                <!-- Add another address or submit form -->
+                <span class="btn btn-default" id="add-address">Another address</span>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
           </div>
 
           <!-- Individual contact information is hidden until user clicks their name -->

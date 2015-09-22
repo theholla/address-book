@@ -23,6 +23,10 @@ Address.prototype.getAddressType = function() {
   return this.addressType;
 }
 
+function showInitialForm() {
+  $("div.new-address").not("div.new-address:nth-child(1)").remove();
+};
+
 /* Clears the form after user clicks submit */
 function resetFields() {
     $("input#new-first-name").val("");
@@ -90,6 +94,9 @@ $(document).ready(function() {
         $("ul#addresses").append("<li>" + address.getAddressType() + " Address: " + address.fullAddress() + "</li>");
       });
     });
+
+    /* Delete extra address fields after submit */
+    showInitialForm();
 
     /* Clears the form after the contact is added */
     resetFields();
