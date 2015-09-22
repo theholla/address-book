@@ -8,7 +8,8 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
 
-function Address(street, city, state) {
+function Address(addressType, street, city, state) {
+  this.addressType = addressType;
   this.street = street;
   this.city = city;
   this.state = state;
@@ -16,6 +17,10 @@ function Address(street, city, state) {
 
 Address.prototype.fullAddress = function() {
   return this.street + ", " + this.city + ", " + this.state;
+}
+
+Address.prototype.getAddressType = function() {
+  return this.addressType;
 }
 
 /* Clears the form after user clicks submit */
@@ -32,6 +37,21 @@ $(document).ready(function() {
 /* Form to add an additional address to a contact */
   $("#add-address").click(function() {
       $(".new-address").append('<div class="new-address">' +
+                                  '<div class="form-group">' +
+                                    '<p><strong>Address Type</strong></p>' +
+                                    '<div class="radio">' +
+                                      '<label>' +
+                                      '<input type="radio" name="home" id="new-addressType" value="new-home-address">' +
+                                      'Home' +
+                                      '</label>' +
+                                    '</div>' +
+                                    '<div class="radio">' +
+                                      '<label>' +
+                                      '<input type="radio" name="work" id="new-addressType" value="new-work-address">' +
+                                      'Work' +
+                                      '</label>' +
+                                    '</div>' +
+                                  '</div>' +
                                   '<div class="form-group">' +
                                   '<label for="new-street">Street</label>'+
                                   '<input type="text" class="form-control new-street">' +
@@ -57,6 +77,7 @@ $(document).ready(function() {
 
     /* Add a contact's address */
     $(".new-address").each(function() {
+      var inputtedAddressType = $(this).find("input.new-addressType").val();
       var inputtedStreet = $(this).find("input.new-street").val();
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
@@ -77,7 +98,7 @@ $(document).ready(function() {
       $("ul#addresses").text("");
 
       newContact.addresses.forEach(function(address) {
-        $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+        $("ul#addresses").append("<li>" + address.getAddressType() + ": " + address.fullAddress() + "</li>");
       });
     });
 
